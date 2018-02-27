@@ -1,0 +1,57 @@
+﻿@model VoylokTrade.Models.Good
+
+@{
+    ViewData["Title"] = "Удаление";
+}
+
+<h2>Удалить</h2>
+
+<h3>Уверены ,что хотите удалить данный товар?</h3>
+<div>
+    <h4>Товар</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightInGramms)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WeightInGramms)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BoxSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MinOrger)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinOrger)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-default" /> |
+        <a asp-action="Index">К списку</a>
+    </form>
+</div>

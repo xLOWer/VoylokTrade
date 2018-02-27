@@ -1,0 +1,54 @@
+﻿@model VoylokTrade.Models.Good
+
+@{
+    ViewData["Title"] = "Просмотр";
+}
+
+<h2>Просмотр товара</h2>
+
+<div>
+    <h4>Товар</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightInGramms)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WeightInGramms)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BoxSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MinOrger)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinOrger)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a> |
+    <a asp-action="Index">К списку</a>
+</div>
