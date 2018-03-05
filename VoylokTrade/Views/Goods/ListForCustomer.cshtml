@@ -19,60 +19,55 @@
                 @Html.DisplayNameFor(model => model.TareVolume)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PricePerGood)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Manufacturer)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Weight)
+                @Html.DisplayNameFor(model => model.WeightInGramms)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.WeightType)
+                @Html.DisplayNameFor(model => model.TareWeightInKg)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PriceMarkupInPercent)
+                @Html.DisplayNameFor(model => model.PricePerGoodWithMarkup)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TimeStamp)
+                @Html.DisplayNameFor(model => model.FullTarePriceWithMarkup)
             </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TareVolume)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PricePerGood)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Manufacturer)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.WeightType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PriceMarkupInPercent)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeStamp)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Просмотреть</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TareVolume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.WeightInGramms)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.TareWeightInKg)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.PricePerGoodWithMarkup)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.FullTarePriceWithMarkup)
+            </th>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Просмотреть</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

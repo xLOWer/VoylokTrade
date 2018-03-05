@@ -37,14 +37,14 @@ namespace VoylokTrade
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Goods}/{action=Index}/{id?}");
+                    template: "{controller=Goods}/{action=ListForCustomer}/{id?}");
             });
         }
     }

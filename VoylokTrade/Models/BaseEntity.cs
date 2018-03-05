@@ -16,7 +16,7 @@ namespace VoylokTrade.Models
         [Display(AutoGenerateField = false)]
         public Guid Id { get; set; }
 
-        [Display(AutoGenerateField = false)]
+        [Display(Name = "Штамп даты", AutoGenerateField = false)]
         public DateTime TimeStamp { get; set; }
     }
 }

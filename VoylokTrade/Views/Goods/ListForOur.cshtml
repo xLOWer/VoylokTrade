@@ -25,16 +25,28 @@
                 @Html.DisplayNameFor(model => model.Manufacturer)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Weight)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WeightType)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.PriceMarkupInPercent)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TimeStamp)
+                @Html.DisplayNameFor(model => model.WeightInGramms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TareWeightInKg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullTarePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PricePerGoodWithMarkup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullTarePriceWithMarkup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfitPerGood)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfitPerTare)
             </th>
             <th></th>
         </tr>
@@ -56,17 +68,29 @@
                     @Html.DisplayFor(modelItem => item.Manufacturer)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.WeightType)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.PriceMarkupInPercent)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeStamp)
-                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.WeightInGramms)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.TareWeightInKg)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.FullTarePrice)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.PricePerGoodWithMarkup)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.FullTarePriceWithMarkup)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.ProfitPerGood)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.ProfitPerTare)
+                </th>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Просмотреть</a> |

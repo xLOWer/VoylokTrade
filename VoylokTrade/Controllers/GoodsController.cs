@@ -21,9 +21,19 @@ namespace VoylokTrade.Controllers
         // GET: Goods
         public async Task<IActionResult> Index()
         {
+            return await ListForCustomer();
+        }
+        // GET: Goods
+        public async Task<IActionResult> ListForOur()
+        {
             return View(await _context.Goods.ToListAsync());
         }
 
+        // GET: Goods
+        public async Task<IActionResult> ListForCustomer()
+        {
+            return View(await _context.Goods.ToListAsync());
+        }
         // GET: Goods/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
@@ -60,7 +70,7 @@ namespace VoylokTrade.Controllers
                 good.Id = Guid.NewGuid();
                 _context.Add(good);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ListForOur));
             }
             return View(good);
         }
@@ -111,7 +121,7 @@ namespace VoylokTrade.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ListForOur));
             }
             return View(good);
         }
@@ -142,7 +152,7 @@ namespace VoylokTrade.Controllers
             var good = await _context.Goods.SingleOrDefaultAsync(m => m.Id == id);
             _context.Goods.Remove(good);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(ListForOur));
         }
 
         private bool GoodExists(Guid id)

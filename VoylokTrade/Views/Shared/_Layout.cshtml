@@ -31,13 +31,13 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Goods" asp-action="ListForOur">Товары(Админ)</a></li>
+                    <li><a asp-area="" asp-controller="Goods" asp-action="ListForCustomer">Товары(Покупатель)</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="container body-content" style="width:100%;">
         @RenderBody()
         <hr />
         <footer>
