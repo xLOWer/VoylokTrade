@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -53,7 +53,7 @@ namespace VoylokTrade.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,TareVolume,PricePerGood,Manufacturer,Weight,WeightType,PriceMarkupInPercent,Id,TimeStamp")] Good good)
+        public async Task<IActionResult> Create([Bind("Name,Manufacturer,WeightInGramms,Cost,BoxSize,MinOrger,Id")] Good good)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace VoylokTrade.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Name,TareVolume,PricePerGood,Manufacturer,Weight,WeightType,PriceMarkupInPercent,Id,TimeStamp")] Good good)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Name,Manufacturer,WeightInGramms,Cost,BoxSize,MinOrger,Id")] Good good)
         {
             if (id != good.Id)
             {
@@ -151,3 +151,4 @@ namespace VoylokTrade.Controllers
         }
     }
 }
+*/

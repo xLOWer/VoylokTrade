@@ -11,9 +11,10 @@ using VoylokTrade.Models;
 namespace VoylokTrade.Migrations
 {
     [DbContext(typeof(VoylokTradeDbContext))]
-    partial class VoylokTradeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180305141226_EditedGoodModelForActualPrices")]
+    partial class EditedGoodModelForActualPrices
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

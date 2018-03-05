@@ -7,7 +7,6 @@
 <h2>Создание</h2>
 
 <h4>Товар</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -18,29 +17,39 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="TareVolume" class="control-label"></label>
+                <input asp-for="TareVolume" class="form-control" />
+                <span asp-validation-for="TareVolume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PricePerGood" class="control-label"></label>
+                <input asp-for="PricePerGood" class="form-control" />
+                <span asp-validation-for="PricePerGood" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Manufacturer" class="control-label"></label>
                 <input asp-for="Manufacturer" class="form-control" />
                 <span asp-validation-for="Manufacturer" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="WeightInGramms" class="control-label"></label>
-                <input asp-for="WeightInGramms" class="form-control" />
-                <span asp-validation-for="WeightInGramms" class="text-danger"></span>
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cost" class="control-label"></label>
-                <input asp-for="Cost" class="form-control" />
-                <span asp-validation-for="Cost" class="text-danger"></span>
+                <label asp-for="WeightType" class="control-label"></label>
+                <input asp-for="WeightType" class="form-control" />
+                <span asp-validation-for="WeightType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BoxSize" class="control-label"></label>
-                <input asp-for="BoxSize" class="form-control" />
-                <span asp-validation-for="BoxSize" class="text-danger"></span>
+                <label asp-for="PriceMarkupInPercent" class="control-label"></label>
+                <input asp-for="PriceMarkupInPercent" class="form-control" />
+                <span asp-validation-for="PriceMarkupInPercent" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MinOrger" class="control-label"></label>
-                <input asp-for="MinOrger" class="form-control" />
-                <span asp-validation-for="MinOrger" class="text-danger"></span>
+                <label asp-for="TimeStamp" class="control-label"></label>
+                <input asp-for="TimeStamp" class="form-control" />
+                <span asp-validation-for="TimeStamp" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-default" />
