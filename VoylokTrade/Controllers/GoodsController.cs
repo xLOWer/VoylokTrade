@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -16,6 +17,24 @@ namespace VoylokTrade.Controllers
         public GoodsController(VoylokTradeDbContext context)
         {
             _context = context;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> MassAdding(string str)
+        {
+            //var str = obj;
+
+            Regex reg = new Regex("^123", RegexOptions.Multiline | RegexOptions.IgnoreCase);
+            MatchCollection match = reg.Matches(str);
+
+            
+
+            return await ListForCustomer();
+        }
+
+        public IActionResult MassAddingList()
+        {
+            return View("MassAddingList");
         }
 
         // GET: Goods

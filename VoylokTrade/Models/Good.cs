@@ -15,6 +15,7 @@ namespace VoylokTrade.Models
         /// Наименование товара
         /// </summary>
         [Display(Name = "Наименование")]
+        [UIHint("String")]
         public string Name { get; set; }
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace VoylokTrade.Models
         /// Тип веса для вычисления его в граммах
         /// </summary>
         [Display(Name = "Тип Веса", AutoGenerateField = false)]
+        [UIHint("Collection")]
         public WeightTypeEnum? WeightType { get; set; }
 
         /// <summary>
@@ -52,6 +54,8 @@ namespace VoylokTrade.Models
         /// </summary>
         [Display(Name = "Наценка, %.")]
         public int? PriceMarkupInPercent { get; set; }
+        
+
 
         //computed fields
 
@@ -59,48 +63,50 @@ namespace VoylokTrade.Models
         /// Вычесленный вес еденицы товара в граммах
         /// </summary>
         [Display(Name = "Вес, г.")]
-        public int? WeightInGramms => (int?)(WeightType == WeightTypeEnum.grams ? Weight : Weight * 1000);
+        public virtual int? WeightInGramms => (int?)(WeightType == WeightTypeEnum.grams ? Weight : Weight * 1000);
 
         /// <summary>
         /// Цена одной еденицы товара
         /// </summary>
         [Display(Name = "Вес тары, кг.")]
-        public double? TareWeightInKg => (WeightInGramms * TareVolume) / 1000;
+        public virtual double? TareWeightInKg => (WeightInGramms * TareVolume) / 1000;
 
         /// <summary>
         /// Цена одной коробки
         /// </summary>
         [Display(Name = "Цена, руб/коробка.")]
-        public double? FullTarePrice => PricePerGood * TareVolume;
+        public virtual double? FullTarePrice => PricePerGood * TareVolume;
 
         /// <summary>
         /// Цена с наценкой за еденицу товара
         /// </summary>
         [Display(Name = "Цена, руб/шт.")]
-        public double? PricePerGoodWithMarkup => PricePerGood * (1 + ((double?)PriceMarkupInPercent / 100)); //35% => N * (1 + (35/100)) => N * (1 + (0.35)) => N * 1.35
+        public virtual double? PricePerGoodWithMarkup => PricePerGood * (1 + ((double?)PriceMarkupInPercent / 100)); //35% => N * (1 + (35/100)) => N * (1 + (0.35)) => N * 1.35
 
         /// <summary>
         /// Цена с наценкой за коробку
         /// </summary>
         [Display(Name = "Цена, руб/коробка.")]
-        public double? FullTarePriceWithMarkup => PricePerGoodWithMarkup * TareVolume;
+        public virtual double? FullTarePriceWithMarkup => PricePerGoodWithMarkup * TareVolume;
 
         /// <summary>
         /// Прибыль в рублях за еденицу товара
         /// </summary>
         [Display(Name = "Прибыль, руб/шт.")]
-        public double? ProfitPerGood => PricePerGoodWithMarkup - PricePerGood;
+        public virtual double? ProfitPerGood => PricePerGoodWithMarkup - PricePerGood;
 
         /// <summary>
         /// Прибыль в рублях с одной коробки
         /// </summary>
         [Display(Name = "Прибыль, руб/коробка.")]
-        public double? ProfitPerTare => FullTarePriceWithMarkup - FullTarePrice;
+        public virtual double? ProfitPerTare => FullTarePriceWithMarkup - FullTarePrice;
 
     }
     public enum WeightTypeEnum
     {
+        [Display(Name = "г", Description = "г")]
         grams = 0,
+        [Display(Name = "кг", Description = "кг")]
         kilograms = 1
     };
 }
